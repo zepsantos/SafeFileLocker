@@ -36,7 +36,7 @@ public class DS {
     public byte[] splitSecret(String hash,int n , int k,byte[] keyToDecrypt) {
         SecretManager tmp = this.SecretManagerMap.get(hash);
         if(tmp == null) {
-            tmp = new SecretManager(hash,k,n);
+            tmp = new SecretManager(hash,n,k);
             this.SecretManagerMap.put(hash,tmp);
         }
         tmp.splitSecret(keyToDecrypt);

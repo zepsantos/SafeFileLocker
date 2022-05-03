@@ -49,6 +49,7 @@ public class ServerWorker implements Runnable{
 
                 if(dc.isSecretShared()) {
                     if (filename != null) {
+                        System.out.println("Key before Split: " + Base64.getEncoder().encodeToString(keyToDecrypt));
                         keyToDecrypt = ds.splitSecret(hash,dc.getnPartsCreated(),dc.getnPartsNeeded(),keyToDecrypt);
                         DataClass tmpdataClass = ds.getFromDataClassHashMap(hash);
                         tmpdataClass.setSecretShare(true,dc.getnPartsCreated(),dc.getnPartsNeeded());

@@ -206,7 +206,13 @@ public class Client {
                     System.out.println("File decrypted to: " + filename );
                     break;
                 case 3:
-                    c.encryptFile("toenc.txt",true,5,2);
+                    System.out.print("Parts Created: ");
+                    input.nextLine();
+                    int partsCreated = input.nextInt();
+                    System.out.print("Parts Needed: ");
+                    input.nextLine();
+                    int partsNeeded = input.nextInt();
+                    c.encryptFile("toenc.txt",true,partsCreated,partsNeeded);
                     break;
                 case 4:
                     System.out.print("Hash: ");
